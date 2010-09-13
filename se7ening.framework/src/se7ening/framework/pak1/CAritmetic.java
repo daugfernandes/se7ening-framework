@@ -51,4 +51,8 @@ public class CAritmetic {
         return v1-v2;
     }
 
+    public float Multiply() {
+        return v1*v2;
+    }
+
 }
