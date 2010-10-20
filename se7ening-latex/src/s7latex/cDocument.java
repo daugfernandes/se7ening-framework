@@ -25,56 +25,47 @@
 
 package s7latex;
 
-import java.util.List;
-import java.util.ArrayList;
-
 /*
 
-    s7latex::cBody.java
+    s7latex::cDocument.java
 
  */
-public class cBody {
+public class cDocument {
 
-    private boolean _showtitle = false;
-    private List<cObject> _objects;
+    private cBody _body;
+    private cPreamble _preamble;
 
-    public void cBody(boolean p_showtitle, cObject p_afirstobject) {
-        _objects = new ArrayList<cObject>();
-        _objects.add(p_afirstobject);
+    public void cDocument() {
+        setBody(new cBody());
+        setPreamble(new cPreamble());
     }
 
-    public boolean getShowTitle() {
-        return _showtitle;
+    public void cDocument(cBody p_body, cPreamble p_preamble) {
+        setBody(p_body);
+        setPreamble(p_preamble);
     }
 
-    public void addObject(cObject value) {
-        _objects.add(value);
+    public cBody getBody() {
+        return _body;
     }
 
-    public List<cObject> getObjects() {
-        return _objects;
+    public void setBody(cBody value) {
+        _body = value;
     }
 
-    public void setObjects(List<cObject> value) {
-        _objects = value;
+    public cPreamble getPreamble() {
+        return _preamble;
     }
 
-    public void setShowTitle(boolean value) {
-        _showtitle = value;
+    public void setPreamble(cPreamble value) {
+        _preamble = value;
     }
 
     @Override public String toString() {
-        return "";
+        return "cDocument";
     }
 
     public String getTEX(String ident) {
-
-        String s = "";
-
-        for (cObject o : getObjects()) {
-            s += o.getTEX(ident + "    ") + "\n";
-        }
-
-        return s;
+        return _preamble.getTEX(ident+"    ") + "\n" + _body.getTEX(ident+"    ");
     }
 }

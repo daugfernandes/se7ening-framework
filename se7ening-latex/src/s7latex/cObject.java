@@ -25,56 +25,23 @@
 
 package s7latex;
 
-import java.util.List;
-import java.util.ArrayList;
-
 /*
 
-    s7latex::cBody.java
+    s7latex::cObject.java
 
  */
-public class cBody {
+public class cObject {
 
-    private boolean _showtitle = false;
-    private List<cObject> _objects;
+    public void cObject() {
 
-    public void cBody(boolean p_showtitle, cObject p_afirstobject) {
-        _objects = new ArrayList<cObject>();
-        _objects.add(p_afirstobject);
-    }
-
-    public boolean getShowTitle() {
-        return _showtitle;
-    }
-
-    public void addObject(cObject value) {
-        _objects.add(value);
-    }
-
-    public List<cObject> getObjects() {
-        return _objects;
-    }
-
-    public void setObjects(List<cObject> value) {
-        _objects = value;
-    }
-
-    public void setShowTitle(boolean value) {
-        _showtitle = value;
     }
 
     @Override public String toString() {
-        return "";
+        return "cObject?";
     }
 
     public String getTEX(String ident) {
-
-        String s = "";
-
-        for (cObject o : getObjects()) {
-            s += o.getTEX(ident + "    ") + "\n";
-        }
-
-        return s;
+        return ident + toString();
     }
+    
 }
