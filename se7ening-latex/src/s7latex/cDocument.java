@@ -30,7 +30,7 @@ package s7latex;
     s7latex::cDocument.java
 
  */
-public class cDocument {
+public class cDocument extends cObject {
 
     private cBody _body;
     private cPreamble _preamble;
@@ -38,11 +38,13 @@ public class cDocument {
     public void cDocument() {
         setBody(new cBody());
         setPreamble(new cPreamble());
+        setIsContainer(true);
     }
 
     public void cDocument(cBody p_body, cPreamble p_preamble) {
         setBody(p_body);
         setPreamble(p_preamble);
+        setIsContainer(true);
     }
 
     public cBody getBody() {
@@ -65,7 +67,22 @@ public class cDocument {
         return "cDocument";
     }
 
-    public String getTEX(String ident) {
+    @Override  public String getTEX(String ident) {
         return _preamble.getTEX(ident+"    ") + "\n" + _body.getTEX(ident+"    ");
+    }
+
+    @Override public cObject getObjectByKey(String p_key) {
+        if(getKey().equals(p_key))
+            return this;
+        else
+        {
+            cObject o = getBody().getObjectByKey(p_key);
+            if(o != null) return o;
+
+            o = getPreamble().getObjectByKey(p_key);
+            if(o != null) return o;
+            
+            return null;
+        }
     }
 }

@@ -40,6 +40,7 @@ public class cString extends cObject {
      */
     public void cString() {
         setString("");
+        setIsContainer(false);
     }
 
     /**
@@ -48,6 +49,7 @@ public class cString extends cObject {
      */
     public void cString(cString value) {
         setString(value.getString());
+        setIsContainer(false);
     }
 
     /**
@@ -56,6 +58,7 @@ public class cString extends cObject {
      */
     public void cString(String value) {
         setString(value);
+        setIsContainer(false);
     }
 
     /**
@@ -89,6 +92,13 @@ public class cString extends cObject {
      */
     @Override public String getTEX(String ident) {
         return ident + getString();
+    }
+
+    @Override public cObject getObjectByKey(String p_key) {
+        if(getKey().equals(p_key))
+            return this;
+        else
+            return null;
     }
 
 }

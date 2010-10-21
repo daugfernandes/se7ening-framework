@@ -30,13 +30,20 @@ package s7latex;
     s7latex::cPreamble.java
 
  */
-public class cPreamble {
+public class cPreamble extends cObject {
 
     @Override public String toString() {
         return "cPreamble?";
     }
 
-    public String getTEX(String ident) {
+    @Override public String getTEX(String ident) {
         return ident + toString();
+    }
+
+    @Override public cObject getObjectByKey(String p_key) {
+        if(getKey().equals(p_key))
+            return this;
+        else
+            return null;
     }
 }

@@ -25,72 +25,36 @@
 
 package s7latex;
 
-import java.util.List;
-import java.util.ArrayList;
-
 /*
 
-    s7latex::cBody.java
+    s7latex::cClass.java
 
  */
-public class cBody extends cObject {
+public class cClass extends cString {
 
-    private boolean _showtitle = false;
-    private List<cObject> _objects;
-
-    public void cBody(boolean p_showtitle, cObject p_afirstobject) {
-        _objects = new ArrayList<cObject>();
-        _objects.add(p_afirstobject);
+    public void cClass() {
+        setString("");
+        setIsContainer(false);
     }
 
-    public void addObject(cObject value) {
-        _objects.add(value);
-    }
-
-    public List<cObject> getObjects() {
-        return _objects;
-    }
-
-    public void setObjects(List<cObject> value) {
-        _objects = value;
-    }
-
-    public boolean getShowTitle() {
-        return _showtitle;
-    }
-
-    public void setShowTitle(boolean value) {
-        _showtitle = value;
+    public void cClass(String value) {
+        setString(value);
+        setIsContainer(false);
     }
 
     @Override public String toString() {
-        return "";
+        return "cClass?";
     }
 
     @Override public String getTEX(String ident) {
-
-        String s = ident + "\\begin{document}\n";
-        if(getShowTitle()) s += "\\maketitle\n";
-
-        for (cObject o : getObjects()) {
-            s += o.getTEX(ident + "    ") + "\n";
-        }
-
-        s += ident + "\\end{document}";
-
-        return s;
+        return ident + getString();
     }
 
     @Override public cObject getObjectByKey(String p_key) {
         if(getKey().equals(p_key))
             return this;
         else
-        {
-            for (cObject o : getObjects()) {
-                cObject ret = o.getObjectByKey(p_key);
-                if(ret != null) return ret;
-            }
             return null;
-        }
     }
+
 }
