@@ -25,58 +25,18 @@
 
 package s7latex;
 
-/*
-
-    s7latex::cObject.java
-
+/**
+ *
+ * @author david
  */
-public class cObject {
+public class Main {
 
-    private String _name;
-    private String _key;
-    private boolean _iscontainer = true;
 
-    cObject() {
+    public static void main(String[] args) {
 
+        cDocument cDoc=new cDocument(new cBody(),new cPreamble());
+        System.out.println(cDoc.getTEX(""));
+     
     }
-
-    public void setIsContainer(boolean value) {
-        _iscontainer = value;
-    }
-
-    public boolean getIsContainer() {
-        return _iscontainer;
-    }
-
-    public void setKey(String value) {
-        _key = value;
-    }
-
-    public void setName(String value) {
-        _name = value;
-    }
-
-    public String getKey() {
-        return _key;
-    }
-
-    public String getName() {
-        return _name;
-    }
-
-    @Override public String toString() {
-        return "cObject?";
-    }
-
-    public String getTEX(String ident) {
-        return ident + toString();
-    }
-
-    public cObject getObjectByKey(String p_key) {
-        if(getKey().equals(p_key))
-            return this;
-        else
-            return null;
-    }
-    
 }
+

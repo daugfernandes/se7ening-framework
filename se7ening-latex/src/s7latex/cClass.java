@@ -32,12 +32,12 @@ package s7latex;
  */
 public class cClass extends cString {
 
-    public void cClass() {
+    cClass() {
         setString("");
         setIsContainer(false);
     }
 
-    public void cClass(String value) {
+    cClass(String value) {
         setString(value);
         setIsContainer(false);
     }

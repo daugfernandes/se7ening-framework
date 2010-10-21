@@ -39,20 +39,20 @@ public class cPackage extends cObject {
       private List<cModule> _modules;
       private List<cOption> _options;
 
-      public void cPackage() {
+      cPackage() {
           _modules = new ArrayList<cModule>();
           _options = new ArrayList<cOption>();
           setIsContainer(false);
       }
 
-      public void cPackage(cOption p_afirstoption) {
+      cPackage(cOption p_afirstoption) {
           _modules = new ArrayList<cModule>();
           _options = new ArrayList<cOption>();
           _options.add(p_afirstoption);
           setIsContainer(false);
       }
 
-      public void cPackage(cModule p_afirstmodule) {
+      cPackage(cModule p_afirstmodule) {
           _modules = new ArrayList<cModule>();
           _modules.add(p_afirstmodule);
           _options = new ArrayList<cOption>();

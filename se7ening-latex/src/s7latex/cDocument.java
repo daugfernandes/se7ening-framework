@@ -35,13 +35,13 @@ public class cDocument extends cObject {
     private cBody _body;
     private cPreamble _preamble;
 
-    public void cDocument() {
+    cDocument() {
         setBody(new cBody());
         setPreamble(new cPreamble());
         setIsContainer(true);
     }
 
-    public void cDocument(cBody p_body, cPreamble p_preamble) {
+    cDocument(cBody p_body, cPreamble p_preamble) {
         setBody(p_body);
         setPreamble(p_preamble);
         setIsContainer(true);

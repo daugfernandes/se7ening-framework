@@ -32,6 +32,10 @@ package s7latex;
  */
 public class cPreamble extends cObject {
 
+    cPreamble() {
+        
+    }
+
     @Override public String toString() {
         return "cPreamble?";
     }

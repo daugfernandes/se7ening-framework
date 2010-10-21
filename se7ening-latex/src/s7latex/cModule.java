@@ -32,4 +32,7 @@ package s7latex;
  */
 public class cModule extends cString {
 
+    cModule() {
+        
+    }
 }

@@ -32,4 +32,8 @@ package s7latex;
  */
 public class cOption extends cString {
 
+    cOption() {
+        
+    }
+
 }

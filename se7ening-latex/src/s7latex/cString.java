@@ -38,7 +38,7 @@ public class cString extends cObject {
     /**
      * Default parameterless constructor.
      */
-    public void cString() {
+    cString() {
         setString("");
         setIsContainer(false);
     }
@@ -47,7 +47,7 @@ public class cString extends cObject {
      * Copy constructor.
      * @param value cString to copy from.
      */
-    public void cString(cString value) {
+    cString(cString value) {
         setString(value.getString());
         setIsContainer(false);
     }
@@ -56,7 +56,7 @@ public class cString extends cObject {
      * String constructor.
      * @param value String value to store.
      */
-    public void cString(String value) {
+    cString(String value) {
         setString(value);
         setIsContainer(false);
     }

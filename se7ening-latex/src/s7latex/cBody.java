@@ -38,7 +38,11 @@ public class cBody extends cObject {
     private boolean _showtitle = false;
     private List<cObject> _objects;
 
-    public void cBody(boolean p_showtitle, cObject p_afirstobject) {
+    cBody() {
+        _objects = new ArrayList<cObject>();
+    }
+
+    cBody(boolean p_showtitle, cObject p_afirstobject) {
         _objects = new ArrayList<cObject>();
         _objects.add(p_afirstobject);
     }
