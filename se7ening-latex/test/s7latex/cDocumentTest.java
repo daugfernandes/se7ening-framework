@@ -26,68 +26,98 @@
 package s7latex;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
-
+import org.junit.BeforeClass;
+import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
  * @author david
  */
-public class cStringTest {
+public class cDocumentTest {
 
-    public cStringTest() {
+    public cDocumentTest() {
     }
 
-    @org.junit.BeforeClass
+    @BeforeClass
     public static void setUpClass() throws Exception {
     }
 
-    @org.junit.AfterClass
+    @AfterClass
     public static void tearDownClass() throws Exception {
     }
 
-    @org.junit.Before
-    public void setUp() throws Exception {
+    @Before
+    public void setUp() {
     }
 
-    @org.junit.After
-    public void tearDown() throws Exception {
+    @After
+    public void tearDown() {
     }
 
     /**
-     * Test of getString method, of class cString.
+     * Test of getBody method, of class cDocument.
      */
-    @org.junit.Test
-    public void testGetString() {
-        System.out.println("getString");
-        cString instance = new cString("");
-        String expResult = "";
-        String result = instance.getString();
+    @Test
+    public void testGetBody() {
+        System.out.println("getBody");
+        cDocument instance = new cDocument();
+        cBody expResult = null;
+        cBody result = instance.getBody();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setString method, of class cString.
+     * Test of setBody method, of class cDocument.
      */
-    @org.junit.Test
-    public void testSetString() {
-        System.out.println("setString");
-        String value = "";
-        cString instance = new cString();
-        instance.setString(value);
-        assertEquals(value, instance.getString());
+    @Test
+    public void testSetBody() {
+        System.out.println("setBody");
+        cBody value = null;
+        cDocument instance = new cDocument();
+        instance.setBody(value);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of toString method, of class cString.
+     * Test of getPreamble method, of class cDocument.
      */
-    @org.junit.Test
+    @Test
+    public void testGetPreamble() {
+        System.out.println("getPreamble");
+        cDocument instance = new cDocument();
+        cPreamble expResult = null;
+        cPreamble result = instance.getPreamble();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setPreamble method, of class cDocument.
+     */
+    @Test
+    public void testSetPreamble() {
+        System.out.println("setPreamble");
+        cPreamble value = null;
+        cDocument instance = new cDocument();
+        instance.setPreamble(value);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of toString method, of class cDocument.
+     */
+    @Test
     public void testToString() {
         System.out.println("toString");
-        cString instance = new cString();
+        cDocument instance = new cDocument();
         String expResult = "";
         String result = instance.toString();
         assertEquals(expResult, result);
@@ -96,13 +126,13 @@ public class cStringTest {
     }
 
     /**
-     * Test of getTEX method, of class cString.
+     * Test of getTEX method, of class cDocument.
      */
-    @org.junit.Test
+    @Test
     public void testGetTEX() {
         System.out.println("getTEX");
         String ident = "";
-        cString instance = new cString();
+        cDocument instance = new cDocument();
         String expResult = "";
         String result = instance.getTEX(ident);
         assertEquals(expResult, result);
@@ -111,13 +141,13 @@ public class cStringTest {
     }
 
     /**
-     * Test of getObjectByKey method, of class cString.
+     * Test of getObjectByKey method, of class cDocument.
      */
-    @org.junit.Test
+    @Test
     public void testGetObjectByKey() {
         System.out.println("getObjectByKey");
         String p_key = "";
-        cString instance = new cString();
+        cDocument instance = new cDocument();
         cObject expResult = null;
         cObject result = instance.getObjectByKey(p_key);
         assertEquals(expResult, result);
