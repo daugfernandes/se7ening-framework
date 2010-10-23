@@ -66,7 +66,7 @@ public class cString extends cObject {
      * @return String stored.
      */
     public String getString() {
-        return _string;
+        return cUtil.Translate(_string);
     }
 
     /**
